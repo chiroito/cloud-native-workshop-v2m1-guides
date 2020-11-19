@@ -51,16 +51,16 @@ _Panache_ （Hibernate ORM 経由でデータにアクセスするための簡�
 
 [source,sh,role="copypaste"]
 ----
-mvn quarkus:add-extension -Dextensions="hibernate-orm-panache, jdbc-h2, health" -f $CHE_PROJECTS_ROOT/cloud-native-workshop-v2m1-labs/inventory
+mvn quarkus:add-extension -Dextensions="hibernate-orm-panache, jdbc-h2, smallrye-health" -f $CHE_PROJECTS_ROOT/cloud-native-workshop-v2m1-labs/inventory
 ----
 
 あなたは以下を見られます。
 
-✅ Adding extension io.quarkus:quarkus-hibernate-orm-panache
+✅ Extension io.quarkus:quarkus-hibernate-orm-panache has been installed
 
-✅ Adding extension io.quarkus:quarkus-jdbc-h2
+✅ Extension io.quarkus:quarkus-smallrye-health has been installed
 
-✅ Adding extension io.quarkus:quarkus-smallrye-health
+✅ Extension io.quarkus:quarkus-jdbc-h2 has been installed
 
 そして、これは `pom.xml` に拡張機能を追加します。
 
@@ -215,7 +215,7 @@ INSERT INTO INVENTORY (id, itemId, link, location, quantity) values (nextval('hi
 
 [source,sh,role="copypaste"]
 ----
-mvn clean compile quarkus:dev -f $CHE_PROJECTS_ROOT/cloud-native-workshop-v2m1-labs/inventory
+mvn quarkus:dev -f $CHE_PROJECTS_ROOT/cloud-native-workshop-v2m1-labs/inventory
 ----
 
 以下で終わるログ出力の束が表示されるはずです。
@@ -397,9 +397,9 @@ mvn quarkus:add-extension -Dextensions="jdbc-postgresql,openshift" -f $CHE_PROJE
 
 あなたを以下を見られます。
 
-✅ Adding extension io.quarkus:quarkus-openshift
+✅ Extension io.quarkus:quarkus-openshift has been installed
 
-✅ Adding extension io.quarkus:quarkus-jdbc-postgresql
+✅ Extension io.quarkus:quarkus-jdbc-postgresql has been installed
 
 Quarkus は、 _設定プロファイル_ の概念をサポートしています。これらは、同じファイル内に複数の設定を持つことができ、 _プロファイル名_ を介して選択できます。
 
